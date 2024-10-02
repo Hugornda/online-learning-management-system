@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: user-mgmt-ms
+  r2dbc:
+    url: r2dbc:h2:mem:///user-mgmt-db
+    username: user
+    password: pass
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: github-client-id
+            clientSecret: github-client-secret
