@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Flux<User> getAllUsers() {
-		return null;
+		return userRepository.findAll();
 	}
 
 	@Override

@@ -2,10 +2,8 @@ package com.github.user_mgmt_ms.controller;
 
 import com.github.user_mgmt_ms.model.User;
 import com.github.user_mgmt_ms.service.UserService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -20,7 +18,11 @@ public class UserController {
 
 	@PostMapping()
 	public Mono<User> createUser(@RequestBody User user) {
-
 		return userService.createUser(user);
+	}
+
+	@GetMapping()
+	public Flux<User> getAllUsers() {
+		return userService.getAllUsers();
 	}
 }
