@@ -2,13 +2,14 @@ spring:
   application:
     name: user-mgmt-ms
   r2dbc:
-    url: r2dbc:h2:mem:///user-mgmt-db
-    username: user
-    password: pass
+    url: r2dbc:postgresql://localhost:5432/usr_mgmnt
+    username: username
+    password: password
   sql:
     init:
       mode: always
       schema-locations: classpath:schema.sql
+
   security:
     oauth2:
       client:

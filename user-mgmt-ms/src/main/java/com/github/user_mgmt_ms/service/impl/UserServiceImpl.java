@@ -25,15 +25,7 @@ public class UserServiceImpl implements UserService {
 				.doOnNext(u -> logger.info("User created: {}", u));
 	}
 
-	@Override
-	public Mono<User> updateUser(User user) {
-		return userRepository.save(user);
-	}
 
-	@Override
-	public Mono<User> getUser(String id) {
-		return userRepository.findById(id);
-	}
 
 	@Override
 	public Flux<User> getAllUsers() {
@@ -43,8 +35,4 @@ public class UserServiceImpl implements UserService {
 		});
 	}
 
-	@Override
-	public Mono<Void> deleteUser(String id) {
-		return null;
-	}
 }

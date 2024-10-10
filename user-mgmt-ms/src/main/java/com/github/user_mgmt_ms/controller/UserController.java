@@ -25,4 +25,10 @@ public class UserController {
 	public Flux<User> getAllUsers() {
 		return userService.getAllUsers();
 	}
+
+	@PostMapping("/login")
+	public Mono<String> loginUser(@RequestBody User user) {
+		System.out.println(user);
+		return Mono.just("jwttoken");
+	}
 }

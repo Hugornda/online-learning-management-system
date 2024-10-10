@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS USERS (
-    id UUID DEFAULT random_uuid(),          -- ID field with auto-increment
+    id UUID DEFAULT gen_random_uuid(),          -- ID field with auto-increment
     username VARCHAR(255) UNIQUE NOT NULL,  -- Username field
     password VARCHAR(255) NOT NULL,         -- Password field
     email VARCHAR(255) UNIQUE NOT NULL,     -- Email field
